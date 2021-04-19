@@ -1,0 +1,75 @@
+body{
+	background-image: url(images/background.jpg);
+	background-repeat: no-repeat;
+	min-height: 100%;
+	min-width: 100%;
+}
+
+.header{
+	min-width: 100%;
+	min-height: 150px;
+	background-color: lightblue;
+	margin-bottom: 100px;
+	margin-top: 40px;
+}
+
+.container{
+	display: flex;
+	justify-content: space-even;
+	margin: auto;
+	vertical-align: middle;
+	text-align: center;
+	align-items: center;
+	margin-top: 200px;
+}
+
+
+.btn-success{
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-success:hover{
+	background-color: #198699;
+}
+
+.btn{
+    display: block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out;
+    background-color: .15s ease-in-out;
+    border-color: .15s ease-in-out;
+    box-shadow: .15s ease-in-out;
+    text-align: center;
+}
+
+button {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    align-items: flex-start;
+    font: 400 13.3333px Arial;
+    min-width: 200px;
+    min-height: 40px;
+}
+
+
+#bank-img img{
+	height: 80%;
+	width: 40%;
+	border-radius: 5px;
+}
