@@ -1,3 +1,15 @@
+<?php
+    //connecting to db
+    session_start();
+    require_once('connection.php');
+
+    //PHP script to take data out of db
+    $sql = "SELECT * FROM `sluice bank`.`customers`";
+    $result = $conn->query($sql);
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,61 +37,31 @@ tr:nth-child(even) {
 
 <table>
   <tr>
-    <th>Id</th>
+    <th>S. No.</th>
     <th>Name</th>
     <th>Email</th>
     <th>Address</th>
+    <th>Contact</th>
     <th>Account number</th>
     <th>Balance</th>
+    <th>Transaction</th>
   </tr>
-  <tr>
-    <td>1</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
+  <?php 
+        $i = 1;
+        while($row = $result->fetch_assoc()){
+    ?>
+        <tr>
+            <td><?php echo $i; ?></td>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['location']; ?></td>
+            <td><?php echo $row['account_num']; ?></td>
+            <td><?php echo $row['contact_num']; ?></td>
+            <td><?php echo $row['current_balance']; ?></td>
+            <!-- Link to send customer_id to the transaction page -->
+            <td><a href="transfer.php?c_id=<?php echo $row['customer_id']; ?>" target="_blank">Tranfer money</a></td>
+        </tr>
+    <?php $i++; } ?>
 </table>
 
 </body>
