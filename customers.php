@@ -55,8 +55,8 @@ tr:nth-child(even) {
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['location']; ?></td>
-            <td><?php echo $row['account_num']; ?></td>
             <td><?php echo $row['contact_num']; ?></td>
+            <td><?php echo $row['account_num']; ?></td>
             <td><?php echo $row['current_balance']; ?></td>
             <!-- Link to send customer_id to the transaction page -->
             <td><a href="transfer.php?c_id=<?php echo $row['customer_id']; ?>" target="_blank">Tranfer money</a></td>
